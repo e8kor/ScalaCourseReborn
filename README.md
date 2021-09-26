@@ -34,7 +34,7 @@ Implement TreeSet without underlying java collection
 ## Day 3
 
 ### Scala Standard library:
-* type hierarcy
+* type hierarchy
 * Futures/Threads
 * algebraic data types
 * generics
