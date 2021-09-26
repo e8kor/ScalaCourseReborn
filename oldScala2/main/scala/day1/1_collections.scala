@@ -1,4 +1,3 @@
-package course
 package day1
 
 import scala.language.postfixOps
@@ -32,7 +31,7 @@ class CollectionsTutorial(args: Seq[String]) {
   }
 
   // Safe
-  def filterNonNumbers() = {
+  def filterNonNumbers(): Seq[String] = {
     args filter {
       entry =>
         // String is also collection
@@ -41,7 +40,7 @@ class CollectionsTutorial(args: Seq[String]) {
   }
 
   // Safe
-  def filterNonNumbers2() = {
+  def filterNonNumbers2(): Seq[String] = {
     import scala.util.control.Exception.allCatch
     args filter {
       entry =>
@@ -50,11 +49,11 @@ class CollectionsTutorial(args: Seq[String]) {
   }
 
   // Not safe
-  def filterNonNumbers3() = {
+  def filterNonNumbers3(): Seq[Long] = {
     args map (_ toLong)
   }
 
-  def sum = {
+  def sum: Int = {
     // No collection sugar:
     // filterOnlyNumbers() reduce (_ + _)
     filterOnlyNumbers() sum

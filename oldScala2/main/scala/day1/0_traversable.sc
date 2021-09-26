@@ -1,3 +1,5 @@
+import scala.language.postfixOps
+
 // Collections can be
 val c = Array(1, 2, 3)
 val c2 = c.map(_ * 2)
@@ -23,6 +25,8 @@ val reversed = list reverse
 
 list sameElements reversed
 
+list equals reversed
+
 list ne reversed
 !(list equals reversed)
 list equals (reversed reverse)
@@ -30,7 +34,7 @@ list equals (reversed reverse)
 c4.mkString
 c.length
 c.isEmpty && c.nonEmpty
-c.hasDefiniteSize
+c.knownSize
 val result = c.find(_ > 2).map(_.toString)
 val result2 = c.collectFirst { case i if i > 2 => i.toString }
 result2
@@ -43,7 +47,6 @@ c.dropWhile(_ < 5).mkString
 c.slice(1, 2).mkString
 c.count(_ > 2)
 c.foldLeft(0) { case (acc, i) => acc + i }
-(0 /: c) { case (acc, i) => acc + i }
 c.reduceLeft(_ + _) == c.sum //1, 2 => 3, 3 => 6
 
 
